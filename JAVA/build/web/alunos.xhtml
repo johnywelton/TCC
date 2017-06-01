@@ -9,65 +9,23 @@
         <f:view>
             <h:form prependId="false" >
                 <h1 class="page-header">Cadastro de Alunos</h1>
-                    <h:outputLabel value="Nome:" for="nome" />
+                    <h:outputLabel value="Nome" for="nome" />
                     <h:inputText id="nome" value="#{alunoBean.aluno.nome}" title="Nome" required="true" styleClass="form-control" />
-                    <h:outputLabel value="CPF:" for="cpf" />
+                    <h:outputLabel value="CPF" for="cpf" />
                     <h:inputText id="cpf" value="#{alunoBean.aluno.cpf}" title="Cpf" required="true" styleClass="form-control" />
-                    <h:outputLabel value="Endereço:" for="endereco" />
+                    <h:outputLabel value="Endereço" for="endereco" />
                     <h:inputText id="endereco" value="#{alunoBean.aluno.endereco}" title="Endereco" required="true" styleClass="form-control" />
-                    <h:outputLabel value="Telefone:" for="telefone" />
+                    <h:outputLabel value="Telefone" for="telefone" />
                     <h:inputText id="telefone" value="#{alunoBean.aluno.telefone}" title="Telefone" required="true" styleClass="form-control" />
-                    <h:outputLabel value="Curso:" for="cursoIdcurso" />
+                    <h:outputLabel value="Curso" for="cursoIdcurso" />
                     <h:selectOneMenu id="cursoIdcurso" value="#{alunoBean.aluno.idcurso.idcurso}" title="CursoIdcurso" required="true" styleClass="form-control" >
                         <!-- TODO: update below reference to list of available items-->
                         <f:selectItems value="#{cursoBean.cursos}" var="cat" itemLabel="#{cat.descricao}" itemValue="#{cat.idcurso}"/>
                     </h:selectOneMenu>
                 <br/>
                 <h:commandButton value="Salvar" action="#{alunoBean.salvar()}" styleClass="btn btn-success" />
-            </h:form>
-        </f:view>
-
-        <f:view>
-            <h:form>
-                <br/>
-                <h:dataTable value="#{alunoBean.alunos}" var="item" columnClasses="esq, esq, esq, esq, esq, esq, esq, esq, esq" styleClass="table table-striped">
-                    <h:column>
-                        <f:facet name="header">
-                            <h:outputText value="Identificador"/>
-                        </f:facet>
-                        <h:outputText value="#{item.idaluno}"/>
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">
-                            <h:outputText value="Nome"/>
-                        </f:facet>
-                        <h:outputText value="#{item.nome}"/>
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">
-                            <h:outputText value="CPF"/>
-                        </f:facet>
-                        <h:outputText value="#{item.cpf}"/>
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">
-                            <h:outputText value="Endereço"/>
-                        </f:facet>
-                        <h:outputText value="#{item.endereco}"/>
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">
-                            <h:outputText value="Telefone"/>
-                        </f:facet>
-                        <h:outputText value="#{item.telefone}"/>
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">
-                            <h:outputText value="Curso"/>
-                        </f:facet>
-                        <h:outputText value="#{item.idcurso.descricao}"/>
-                    </h:column>
-                </h:dataTable>
+                <br/><br/>
+                <a href="listarAlunos.xhtml">Voltar</a>
             </h:form>
         </f:view>
     </ui:define>

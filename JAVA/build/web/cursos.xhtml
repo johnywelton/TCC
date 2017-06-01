@@ -9,32 +9,14 @@
         <f:view>
             <h:form prependId="false" >
                 <h1 class="page-header">Cadastro de Cursos</h1>
-                    <h:outputLabel value="Descrição:" for="descricao" />
+                    <h:outputLabel value="Descrição" for="descricao" />
                     <h:inputText id="descricao" value="#{cursoBean.curso.descricao}" title="Descricao" required="true" styleClass="form-control" />
-                    <h:outputLabel value="Turno:" for="turno"/>
+                    <h:outputLabel value="Turno" for="turno"/>
                     <h:inputText id="turno" value="#{cursoBean.curso.turno}" title="Turno" required="true" styleClass="form-control" />
                     <br/>
                 <h:commandButton value="Salvar" action="#{cursoBean.salvar()}" styleClass="btn btn-success" />
-            </h:form>
-        </f:view>
-
-        <f:view>
-            <h:form>
-                <br/>
-                <h:dataTable value="#{cursoBean.cursos}" var="item" columnClasses="esq, esq" styleClass="table table-striped">
-                    <h:column>
-                        <f:facet name="header">
-                            <h:outputText value="Identificador"/>
-                        </f:facet>
-                        <h:outputText value="#{item.idcurso}"/>
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">
-                            <h:outputText value="Descrição"/>
-                        </f:facet>
-                        <h:outputText value="#{item.descricao}"/>
-                    </h:column>
-                </h:dataTable>
+                <br/><br/>
+                <a href="listarCursos.xhtml">Voltar</a>
             </h:form>
         </f:view>
     </ui:define>

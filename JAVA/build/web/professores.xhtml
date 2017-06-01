@@ -13,50 +13,14 @@
                     <h:inputText id="nome" value="#{professorBean.professor.nome}" title="Nome" styleClass="form-control" />
                     <h:outputLabel value="CPF:" for="cpf" />
                     <h:inputText id="cpf" value="#{professorBean.professor.cpf}" title="Cpf" required="true" styleClass="form-control" />
-                    <h:outputLabel value="EndereÇo:" for="endereco" />
+                    <h:outputLabel value="Endereço:" for="endereco" />
                     <h:inputText id="endereco" value="#{professorBean.professor.endereco}" title="Endereco" required="true" styleClass="form-control" />
                     <h:outputLabel value="Telefone:" for="telefone" />
                     <h:inputText id="telefone" value="#{professorBean.professor.telefone}" title="Telefone" required="true" styleClass="form-control" />
                 <br/>
                 <h:commandButton value="Salvar" action="#{professorBean.salvar()}" styleClass="btn btn-success" />
-            </h:form>
-        </f:view>
-        
-        <f:view>
-            <h:form>
-                <br/>
-                <h:dataTable value="#{professorBean.professores}" var="item" columnClasses="esq, esq, esq, esq, esq" styleClass="table table-striped">
-                    <h:column>
-                        <f:facet name="header">
-                            <h:outputText value="Identificador"/>
-                        </f:facet>
-                        <h:outputText value="#{item.idprofessor}"/>
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">
-                            <h:outputText value="Nome"/>
-                        </f:facet>
-                        <h:outputText value="#{item.nome}"/>
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">
-                            <h:outputText value="CPF"/>
-                        </f:facet>
-                        <h:outputText value="#{item.cpf}"/>
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">
-                            <h:outputText value="Endereço"/>
-                        </f:facet>
-                        <h:outputText value="#{item.endereco}"/>
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">
-                            <h:outputText value="Telefone"/>
-                        </f:facet>
-                        <h:outputText value="#{item.telefone}"/>
-                    </h:column>
-                </h:dataTable>
+                <br/><br/>
+                <a href="listarProfessores.xhtml">Voltar</a>
             </h:form>
         </f:view>
     </ui:define>
