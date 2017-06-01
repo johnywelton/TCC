@@ -1,0 +1,22 @@
+extends ../layout
+
+block content
+    h1 Alunos
+    a(href="/alunos/create",class="btn btn-success") Cadastrar
+    br
+    br
+    table(class='table table-striped')
+        th Id
+        th Nome
+        th CPF
+        th Endereço
+        th Telefone
+        th Curso
+        each aluno in alunos
+            tr
+                td=aluno.idaluno
+                td=aluno.nome 
+                td=aluno.cpf
+                td=aluno.endereco
+                td=aluno.telefone
+                td=aluno.idcurso

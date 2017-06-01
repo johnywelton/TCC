@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./modelo.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns="http://www.w3.org/1999/xhtml">
+
+    <ui:define name="content">
+        <f:view>
+            <h:form prependId="false" >
+                <h1 class="page-header">Cadastro de Disciplinas</h1>
+                    <h:outputLabel value="Descrição:" for="descricao" />
+                    <h:inputText id="descricao" value="#{disciplinaBean.disciplina.descricao}" title="Descricao" styleClass="form-control" />
+                    <h:outputLabel value="Curso" for="idcurso" />
+                    <h:selectOneMenu id="idcurso" value="#{disciplinaBean.disciplina.idcurso.idcurso}" title="Idcurso" required="true" styleClass="form-control" >
+                        <!-- TODO: update below reference to list of available items-->
+                        <f:selectItems value="#{cursoBean.cursos}" var="cat" itemLabel="#{cat.descricao}" itemValue="#{cat.idcurso}"/>
+                    </h:selectOneMenu>
+                    <br/>
+                <h:commandButton value="Salvar" action="#{disciplinaBean.salvar()}" styleClass="btn btn-success" />
+            </h:form>
+        </f:view>
+
+        <f:view>
+            <h:form>
+                <br/>
+                <h:dataTable value="#{disciplinaBean.disciplinas}" var="item" columnClasses="esq, esq, esq" styleClass="table table-striped">
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Identificador"/>
+                        </f:facet>
+                        <h:outputText value="#{item.iddisciplina}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Descrição"/>
+                        </f:facet>
+                        <h:outputText value="#{item.descricao}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Curso"/>
+                        </f:facet>
+                        <h:outputText value="#{item.idcurso.descricao}"/>
+                    </h:column>
+                </h:dataTable>
+            </h:form>
+        </f:view>
+    </ui:define>
+</ui:composition>
+

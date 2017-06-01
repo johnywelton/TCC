@@ -1,0 +1,24 @@
+extends ../layout
+
+block content
+        h1 Cadastro de Alunos
+        hr
+        br
+        form(method="POST", action="/alunos/create", role="form")
+            div(class="form-group")
+                    label Nome
+                    input(type="text", class="form-control", id="nome" name="nome", placeholder="Nome", autofocus, required)
+                    label CPF
+                    input(type="text", class="form-control", id="cpf" name="cpf", placeholder="CPF", required)
+                    label Endereço
+                    input(type="text", class="form-control", id="endereco" name="endereco", placeholder="Endereco", required)
+                    label Telefone
+                    input(type="text", class="form-control", id="telefone" name="telefone", placeholder="Telefone", required)
+                    label Cursos
+                    select(id="curso" name="curso" class="form-control")
+                        each curso in cursos
+                                option(value=curso.idcurso)=curso.descricao
+            button(type="submit", class="btn btn-success") Salvar
+        br
+        br
+        a(href="/alunos") Voltar

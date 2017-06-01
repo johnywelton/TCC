@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+        h1 Cadastro de Disciplinas
+        hr
+        br
+        form(method="POST", action="/disciplinas/create", role="form")
+            div(class="form-group")
+                label Descrição
+                input(type="text", class="form-control", id="descricao" name="descricao", placeholder="Descricao", autofocus, required)
+                label Curso
+                select(id="curso" name="curso" class="form-control")
+                    each curso in cursos
+                        option(value=curso.idcurso)=curso.descricao
+            button(type="submit", class="btn btn-success") Salvar
+        br
+        br
+        a(href="/disciplinas") Voltar

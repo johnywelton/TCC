@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+        h1 Cadastro de Cursos
+        hr
+        br
+        form(method="POST", action="/cursos/create", role="form")
+            div(class="form-group")
+                    label Descricao
+                    input(type="text", class="form-control", id="descricao" name="descricao", placeholder="Descricao", autofocus, required)
+                    label Turno
+                    input(type="text", class="form-control", id="turno" name="turno", placeholder="Turno", autofocus, required)
+            button(type="submit", class="btn btn-success") Salvar
+        br
+        br
+        a(href="/cursos") Voltar

@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <h:head>
+        <meta charset="UTF-8"></meta>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+        <title>Projeto Java - TCC</title>
+        <h:outputStylesheet library="css" name="bootstrap.min.css"/>
+        <h:outputStylesheet library="css" name="bootstrap-aux.css"/>
+        <h:outputStylesheet library="css" name="style.css"/>
+        
+        <h:outputScript library="js" name="jquery.js"/>
+        <h:outputScript library="js" name="bootstrap.min.js"/>
+
+    </h:head>
+
+    <h:body class="container">
+            <div>
+                <div class="masthead">
+                    <h3 class="text-masthed">Projeto Java com Banco de Dados MySQL - TCC</h3>
+                    <nav>
+                      <ul class="nav nav-justified">
+                        <li class="active"><h:link outcome="homes" value="Home"/></li>  
+                        <li><h:link outcome="alunos" value="Alunos"/></li>
+                        <li><h:link outcome="cursos" value="Cursos"/></li>
+                        <li><h:link outcome="disciplinas" value="Disciplinas"/></li>
+                        <li><h:link outcome="professores" value="Professores"/></li>  
+                      </ul>
+                    </nav>
+                </div>
+            </div>
+        <div class="content">
+            <ui:insert name="content">
+                
+            </ui:insert>
+        </div>
+    </h:body>
+</html>

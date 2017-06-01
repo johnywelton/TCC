@@ -1,0 +1,20 @@
+extends ../layout
+
+block content
+    h1 Professores
+    a(href="/professores/create",class="btn btn-success") Cadastrar
+    br
+    br
+    table(class='table table-striped')
+        th Id
+        th Nome
+        th CPF
+        th Endereço
+        th Telefone
+        each professor in professores
+            tr
+                td=professor.idprofessor
+                td=professor.nome 
+                td=professor.cpf
+                td=professor.endereco
+                td=professor.telefone
